@@ -1,1 +1,75 @@
-server
+server:
+  port: 8080
+
+  error:
+    include-binding-errors: always
+    include-message: always
+    include-stacktrace: never
+
+
+    #servlet:
+    #context-path: /api/v0
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/hoaxify_db
+    username: hoaxify_user
+    password: password
+    driver-class-name: org.postgresql.Driver
+
+    #main:
+    #allow-circular-references: true
+
+
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    properties:
+      '[hibernate.format_sql]': true
+
+  servlet:
+    multipart:
+      max-file-size: 2MB
+      max-request-size: 2MB
+
+logging:
+  file:
+    name: logs/hoaxify.log
+  pattern:
+    file: "%d %-5level [%thread] %logger:%msg%n"
+  level:
+    '[org.springframework.web]': WARN
+    '[org.hibernate]': INFO
+    '[com.safeandfast]': DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+  info:
+    env:
+      enabled: true
+
+  endpoint:
+    health:
+      show-details: always
+
+    shutdown:
+      enabled: true
+
+hoaxify:
+  app:
+    jwtSecret: hoaxify@!23
+    jwtExpirationMs: 86400000
+
+
+info:
+  application:
+    name: 'Hoaxify'
+    description: 'This is conversion project'
+    version: '@project.version@'

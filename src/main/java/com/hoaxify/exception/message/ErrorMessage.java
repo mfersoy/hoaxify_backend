@@ -6,7 +6,7 @@ public class ErrorMessage {
 
     public final  static String USER_NOT_FOUND_MESSAGE = "User not found";
 
-    public  final static String NICKNAME_ALREADY_EXİST = "Nickname already exist";
+    public  final static String NICKNAME_ALREADY_EXIST = "Nickname already exist";
 
     public final static String ROLE_NOT_FOUND_MESSAGE = "Role: %s not found";
 

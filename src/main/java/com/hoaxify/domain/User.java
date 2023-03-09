@@ -29,7 +29,7 @@ public class User  {
     private String nickname;
     @Column
     private String password;
-
+    @Column
     private String passwordRepeat;
 
     @ManyToMany

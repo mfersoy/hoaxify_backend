@@ -1,6 +1,5 @@
-package com.hoaxify.dto;
+package com.hoaxify.dto.request;
 
-import io.micrometer.core.lang.Nullable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,7 +13,7 @@ import javax.validation.constraints.Size;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class UserDTO {
+public class RegistirationRequest {
 
     @Size(max = 30, message = "Size is exceeded")
     @NotBlank(message = "Please provide your name!")

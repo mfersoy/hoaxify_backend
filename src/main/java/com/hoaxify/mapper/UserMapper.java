@@ -1,6 +1,6 @@
 package com.hoaxify.mapper;
 
-import com.hoaxify.dto.UserDTO;
+import com.hoaxify.dto.request.RegistirationRequest;
 import org.mapstruct.Mapper;
 import com.hoaxify.domain.User;
 
@@ -9,8 +9,6 @@ import com.hoaxify.domain.User;
 public interface UserMapper {
 
 
-    UserDTO userToUserDTO(User user);
 
-    User userDTOTOUser(UserDTO userDTO);
 
 }

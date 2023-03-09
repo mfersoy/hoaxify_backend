@@ -1,4 +1,4 @@
-package com.hoaxify.user;
+package com.hoaxify.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -13,12 +15,12 @@ import javax.persistence.*;
 @NoArgsConstructor
 
 @Entity
-@Table(name = "users")
+@Table(name = "t_users")
 public class User  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
 
     @Column
     private String username;
@@ -30,15 +32,9 @@ public class User  {
 
     private String passwordRepeat;
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id='" + id + '\'' +
-                ", userName='" + username + '\'' +
-                ", nickName='" + nickname + '\'' +
-                ", password='" + password + '\'' +
-                '}';
-    }
+    @ManyToMany
+    @JoinTable(name = "t_user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private Set<Role> roles = new HashSet<>();
 
 
 }

@@ -1,8 +1,8 @@
-package com.hoaxify.user;
+package com.hoaxify.mapper;
 
+import com.hoaxify.dto.UserDTO;
 import org.mapstruct.Mapper;
-import com.hoaxify.user.UserDTO;
-import com.hoaxify.user.User;
+import com.hoaxify.domain.User;
 
 
 @Mapper(componentModel = "spring")

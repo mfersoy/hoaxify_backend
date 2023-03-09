@@ -1,4 +1,4 @@
-package com.hoaxify.user;
+package com.hoaxify.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,14 +10,10 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class UserDTO {
+public class GenericResponse {
 
-    private String username;
+    private String message;
 
-    private String nickname;
-
-    private String password;
-
-    private String passwordRepeate;
+    private boolean success;
 
 }
